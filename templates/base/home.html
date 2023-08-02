@@ -1,0 +1,16 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% for room in rooms %}
+    <div class="card">
+        <div class="card-body">
+            <a href="room/{{ room.id }}/" target="_blank" rel="noopener noreferrer">{{ room.name }}</a>
+        </div>
+    </div>
+{% endfor %}
+
+
+<h1>Home Template</h1>
+{% endblock %}
