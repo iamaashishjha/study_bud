@@ -1,0 +1,61 @@
+# Django project settings
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Static files
+staticfiles/
+static_root/
+media/
+
+# Django database files
+*.sqlite3
+db.sqlite3
+*.db
+
+# Environment variables and sensitive data
+.env
+*.env.*
+
+# Development and local settings
+*.log
+*.pyc
+*.swp
+local_settings.py
+
+# Dependency directories
+venv/
+env/
+ENV/
+
+# Editor-specific files 
+.vscode/
+.idea/
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled files
+*.mo
+*.pot
+*.pyc
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Project-specific files
+*.settings
+*.iml
+
+# Secret keys and tokens
+secret_key.txt
+client_secret.json
+
+# Node.js specific
+node_modules/
+npm-debug.log
+
+# Compiled Python bytecode (Python 3)
+__pycache__/
