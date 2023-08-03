@@ -1,0 +1,24 @@
+{% extends 'main.html' %} {% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete "{{ obj }}"?</p>
+  <!-- <a href="{{ request.META.HTTP_REFERER }}" >Go Back</a> -->
+  <!-- <a href="{% url 'go_back' %}">Go Back</a> -->
+  <a href="#" id="goBackLink">Go Back</a>
+
+  <input type="submit" value="confirm" />
+</form>
+
+<script>
+  document
+    .getElementById("goBackLink")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default link behavior
+      debugger;
+      // Get the previous URL from the document.referrer and navigate to it
+      const previousURL = document.referrer;
+      window.location.href = previousURL;
+    });
+</script>
+
+{% endblock %}

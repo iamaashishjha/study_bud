@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 
 # class Category(models.Model):
 #     name= models.CharField(max_length=255)
-#     def __str__(self) -> str:
+#     def __str__(self):
 #         return self.name
     
 class Topic(models.Model):
     name= models.CharField(max_length=255)
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
 
 # Create your models here.
@@ -23,7 +23,7 @@ class Room(models.Model):
     created_at= models.DateTimeField(auto_now_add=True)
     updated_at= models.DateTimeField(auto_now=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
     
 class Message(models.Model):
@@ -33,5 +33,9 @@ class Message(models.Model):
     body = models.TextField(max_length=255)
     created_at= models.DateTimeField(auto_now_add=True)
     updated_at= models.DateTimeField(auto_now=True)
-    def __str__(self) -> str:
+
+    class Meta:
+        get_latest_by = ['-created', '-updated']
+
+    def __str__(self):
         return self.body[0:50]

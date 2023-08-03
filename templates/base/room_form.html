@@ -1,6 +1,6 @@
 {% extends 'main.html' %} {% block content %}
 <form action="#" method="post" enctype="multipart/form-data">
-  <div class="mb-3">
+  <!-- <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
     <input
       type="text"
@@ -22,12 +22,13 @@
     </select>
   </div>
   <div class="mb-3">
-    <!-- <label for="exampleInputPassword1" class="form-label">Comments</label> -->
     <div class="form-floating">
         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
         <label for="floatingTextarea">Comments</label>
       </div>
-  </div>
+  </div> -->
+  {% csrf_token %}
+  {{ form.as_p }}
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
